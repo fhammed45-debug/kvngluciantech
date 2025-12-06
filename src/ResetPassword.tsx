@@ -7,7 +7,7 @@ import { useResponsive } from "./hooks/useResponsive";
 const ResetPassword: React.FC = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const { isMobile, isTablet } = useResponsive();
+  const { isMobile } = useResponsive();
   
   const [token, setToken] = useState("");
   const [formData, setFormData] = useState({

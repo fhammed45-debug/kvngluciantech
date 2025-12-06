@@ -4,6 +4,7 @@ import Contact from './Contact';
 import Signup from './Signup';
 import Login from './Login';
 import ForgotPassword from './ForgotPassword';
+import ResetPassword from './Resetpassword';
 import VerifyEmail from './VerifyEmail';
 import About from './About';
 import Service from './Service';
@@ -19,6 +20,7 @@ function App() {
       <Route path="/Login" element={<Login />} />
       <Route path="/Signup" element={<Signup />} />
       <Route path="/ForgotPassword" element={<ForgotPassword />} />
+      <Route path="/ResetPassword" element={<ResetPassword />} />
       <Route path="/verify-email" element={<VerifyEmail />} />
       
       {/* Protected routes - login required */}

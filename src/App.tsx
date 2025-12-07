@@ -4,7 +4,7 @@ import Contact from './Contact';
 import Signup from './Signup';
 import Login from './Login';
 import ForgotPassword from './ForgotPassword';
-import ResetPassword from './Resetpassword';
+import ResetPassword from './ResetPassword';
 import VerifyEmail from './VerifyEmail';
 import About from './About';
 import Service from './Service';

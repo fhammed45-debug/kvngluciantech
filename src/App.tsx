@@ -21,7 +21,7 @@ function App() {
       <Route path="/Signup" element={<Signup />} />
       <Route path="/ForgotPassword" element={<ForgotPassword />} />
       <Route path="/ResetPassword" element={<ResetPassword />} />
-      <Route path="/verify-email" element={<VerifyEmail />} />
+      <Route path="/verifyEmail" element={<VerifyEmail />} />
       
       {/* Protected routes - login required */}
       <Route path="/contact" element={

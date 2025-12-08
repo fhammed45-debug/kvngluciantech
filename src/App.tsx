@@ -20,8 +20,8 @@ function App() {
       <Route path="/Login" element={<Login />} />
       <Route path="/Signup" element={<Signup />} />
       <Route path="/ForgotPassword" element={<ForgotPassword />} />
-      <Route path="/ResetPassword" element={<ResetPassword />} />
-      <Route path="/verifyEmail" element={<VerifyEmail />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
+      <Route path="/verify-email" element={<VerifyEmail />} />
       
       {/* Protected routes - login required */}
       <Route path="/contact" element={

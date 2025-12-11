@@ -157,6 +157,23 @@
   font-size: 14px;
 }
 
+/* Desktop - Show full navigation, hide hamburger */
+.home-nav-desktop {
+  display: flex !important;
+}
+
+.home-hamburger {
+  display: none !important;
+}
+
+.home-mobile-menu {
+  display: none;
+}
+
+.home-mobile-menu-overlay {
+  display: none;
+}
+
 /* Tablet styles - 768px to 1024px */
 @media (max-width: 1024px) and (min-width: 768px) {
   .home-nav {
@@ -209,14 +226,29 @@
   }
 
   .home-nav {
-    flex-direction: column;
+    flex-direction: row;
     padding: 15px 20px;
-    align-items: flex-start;
-    gap: 15px;
+    align-items: center;
+    gap: 0;
   }
 
   .home-logo {
     font-size: 18px;
+  }
+
+  /* Hide desktop navigation on mobile */
+  .home-nav-desktop {
+    display: none !important;
+  }
+
+  /* Show hamburger on mobile */
+  .home-hamburger {
+    display: block !important;
+  }
+
+  /* Enable mobile menu */
+  .home-mobile-menu {
+    display: flex;
   }
 
   .home-nav-links {
@@ -370,10 +402,16 @@
   .home-email-input {
     padding: 10px 12px;
     font-size: 13px;
+    box-sizing: border-box;
   }
 
   .home-subscribe-btn {
     padding: 10px 15px;
     font-size: 13px;
+  }
+
+  .home-mobile-menu {
+    width: 85%;
+    max-width: 280px;
   }
 }

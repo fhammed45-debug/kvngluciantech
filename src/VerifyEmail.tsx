@@ -3,12 +3,11 @@ import type { FormEvent } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { authAPI } from "./services";
 import axios from "axios";
-import { useResponsive } from "./hooks/useResponsive";
+import "./VerifyEmailResponsive.css";
 
 const VerifyEmail: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { isMobile, isTablet } = useResponsive();
   const emailFromState = location.state?.email || "";
   
   const [email, setEmail] = useState(emailFromState);
@@ -117,10 +116,8 @@ const VerifyEmail: React.FC = () => {
       boxSizing: "border-box",
       overflowX: "hidden",
     }}>
-      <div style={{
+      <div className="verify-nav" style={{
         color: "#fff",
-        padding: isMobile ? "15px 20px" : "20px 40px",
-        fontSize: isMobile ? "14px" : "16px",
       }}>
         <Link to="/home" style={{
           color: "#fff",
@@ -133,37 +130,28 @@ const VerifyEmail: React.FC = () => {
         </Link>
       </div>
 
-      <div style={{
+      <div className="verify-outer-container" style={{
         backgroundColor: "#8E2017",
         minHeight: "calc(100vh - 60px)",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         fontFamily: "'Poppins', sans-serif",
-        padding: isMobile ? "20px 15px" : isTablet ? "30px 20px" : "20px",
       }}>
-        <div style={{
+        <div className="verify-card" style={{
           backgroundColor: "#fff",
-          borderRadius: isMobile ? "10px" : "15px",
           display: "flex",
-          flexDirection: isMobile ? "column" : "row",
           justifyContent: "space-between",
           width: "100%",
-          maxWidth: isMobile ? "100%" : isTablet ? "700px" : "950px",
-          padding: isMobile ? "30px 20px" : isTablet ? "40px 30px" : "50px",
           boxSizing: "border-box",
-          gap: isMobile ? "30px" : "40px",
         }}>
           {/* Left Section */}
-          <div style={{
-            flex: isMobile ? "none" : "1 1 45%",
+          <div className="verify-left-section" style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            minWidth: isMobile ? "100%" : "300px",
           }}>
-            <h1 style={{
-              fontSize: isMobile ? "1.3rem" : isTablet ? "1.5rem" : "1.8rem",
+            <h1 className="verify-heading" style={{
               fontWeight: 700,
               color: "#000",
               lineHeight: "1.4",
@@ -173,8 +161,7 @@ const VerifyEmail: React.FC = () => {
               Almost there! <br />
               Verify your email to continue
             </h1>
-            <p style={{
-              fontSize: isMobile ? "0.9rem" : "1rem",
+            <p className="verify-description" style={{
               color: "#666",
               lineHeight: "1.6",
               margin: 0,
@@ -185,15 +172,12 @@ const VerifyEmail: React.FC = () => {
           </div>
 
           {/* Right Section - Form */}
-          <div style={{
-            flex: isMobile ? "none" : "1 1 40%",
+          <div className="verify-right-section" style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            minWidth: isMobile ? "100%" : "300px",
           }}>
-            <h2 style={{
-              fontSize: isMobile ? "1.3rem" : "1.5rem",
+            <h2 className="verify-form-title" style={{
               fontWeight: 700,
               marginBottom: "20px",
               margin: "0 0 20px 0",
@@ -202,13 +186,11 @@ const VerifyEmail: React.FC = () => {
             </h2>
 
             {error && (
-              <div style={{
+              <div className="verify-error" style={{
                 backgroundColor: "#ffebee",
                 color: "#c62828",
-                padding: isMobile ? "10px" : "12px",
                 borderRadius: "6px",
                 marginBottom: "15px",
-                fontSize: isMobile ? "13px" : "14px",
                 textAlign: "center",
                 border: "1px solid #ef9a9a",
               }}>
@@ -217,13 +199,11 @@ const VerifyEmail: React.FC = () => {
             )}
 
             {success && (
-              <div style={{
+              <div className="verify-success" style={{
                 backgroundColor: "#e8f5e9",
                 color: "#2e7d32",
-                padding: isMobile ? "10px" : "12px",
                 borderRadius: "6px",
                 marginBottom: "15px",
-                fontSize: isMobile ? "13px" : "14px",
                 textAlign: "center",
                 border: "1px solid #a5d6a7",
               }}>
@@ -232,10 +212,10 @@ const VerifyEmail: React.FC = () => {
             )}
 
             <form
+              className="verify-form"
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: isMobile ? "12px" : "15px",
               }}
               onSubmit={handleSubmit}
             >
@@ -248,11 +228,10 @@ const VerifyEmail: React.FC = () => {
                   setEmail(e.target.value);
                   setError("");
                 }}
+                className="verify-email-input"
                 style={{
-                  padding: isMobile ? "10px 12px" : "12px 15px",
                   border: "1px solid #999",
                   borderRadius: "6px",
-                  fontSize: isMobile ? "14px" : "15px",
                   outline: "none",
                   width: "100%",
                   boxSizing: "border-box",
@@ -271,13 +250,11 @@ const VerifyEmail: React.FC = () => {
                   setCode(value);
                   setError("");
                 }}
+                className="verify-code-input"
                 style={{
-                  padding: isMobile ? "10px 12px" : "12px 15px",
                   border: "2px solid #8E2017",
                   borderRadius: "6px",
-                  fontSize: isMobile ? "20px" : "24px",
                   textAlign: "center",
-                  letterSpacing: isMobile ? "4px" : "8px",
                   fontWeight: "bold",
                   outline: "none",
                   width: "100%",
@@ -290,14 +267,13 @@ const VerifyEmail: React.FC = () => {
               
               <button
                 type="submit"
+                className="verify-submit-btn"
                 style={{
                   backgroundColor: "#8E2017",
                   color: "#fff",
                   border: "none",
                   borderRadius: "6px",
-                  padding: isMobile ? "10px" : "12px",
                   cursor: loading ? "not-allowed" : "pointer",
-                  fontSize: isMobile ? "14px" : "15px",
                   marginTop: "5px",
                   fontWeight: "600",
                   opacity: loading ? 0.6 : 1,
@@ -310,12 +286,11 @@ const VerifyEmail: React.FC = () => {
               </button>
             </form>
 
-            <div style={{
+            <div className="verify-resend-section" style={{
               textAlign: "center",
               marginTop: "20px",
             }}>
-              <p style={{
-                fontSize: isMobile ? "13px" : "14px",
+              <p className="verify-resend-text" style={{
                 color: "#666",
                 marginBottom: "10px",
               }}>
@@ -323,14 +298,13 @@ const VerifyEmail: React.FC = () => {
               </p>
               <button
                 onClick={handleResendCode}
+                className="verify-resend-btn"
                 style={{
                   backgroundColor: "transparent",
                   color: "#8E2017",
                   border: "2px solid #8E2017",
                   borderRadius: "6px",
-                  padding: isMobile ? "8px 16px" : "8px 20px",
                   cursor: resendLoading ? "not-allowed" : "pointer",
-                  fontSize: isMobile ? "13px" : "14px",
                   fontWeight: "600",
                   opacity: resendLoading ? 0.6 : 1,
                 }}
@@ -340,8 +314,7 @@ const VerifyEmail: React.FC = () => {
               </button>
             </div>
 
-            <p style={{
-              fontSize: isMobile ? "13px" : "14px",
+            <p className="verify-signup-link" style={{
               textAlign: "center",
               marginTop: "20px",
               color: "#000",

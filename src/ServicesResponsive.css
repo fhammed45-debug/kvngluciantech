@@ -1,0 +1,169 @@
+/* ServicesResponsive.css - Responsive sizing for Services component */
+
+/* Default (Desktop) styles - 1024px and above */
+.services-nav {
+  padding: 20px 40px;
+}
+
+.services-back-link {
+  font-size: 16px;
+}
+
+.services-main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 32px;
+}
+
+.services-title {
+  font-size: 48px;
+  margin-bottom: 64px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.services-card {
+  border-radius: 16px;
+  padding: 32px;
+}
+
+/* Hover effect for desktop only */
+.services-card[data-hovered="true"] {
+  transform: translateY(-8px);
+}
+
+.services-card[data-hovered="false"] {
+  transform: translateY(0);
+}
+
+.services-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 24px;
+  font-size: 32px;
+}
+
+.services-card-title {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.services-card-description {
+  font-size: 16px;
+}
+
+/* Tablet styles - 768px to 1024px */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .services-main {
+    padding: 50px 30px;
+  }
+
+  .services-title {
+    font-size: 40px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+/* Mobile styles - below 768px */
+@media (max-width: 767px) {
+  .services-nav {
+    padding: 15px 20px;
+  }
+
+  .services-back-link {
+    font-size: 14px;
+  }
+
+  .services-main {
+    padding: 40px 20px;
+  }
+
+  .services-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .services-card {
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  /* Disable hover transform on mobile */
+  .services-card[data-hovered="true"] {
+    transform: translateY(0);
+  }
+
+  .services-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
+    font-size: 28px;
+  }
+
+  .services-card-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .services-card-description {
+    font-size: 14px;
+  }
+}
+
+/* Extra small mobile - below 375px */
+@media (max-width: 374px) {
+  .services-nav {
+    padding: 12px 15px;
+  }
+
+  .services-back-link {
+    font-size: 13px;
+  }
+
+  .services-main {
+    padding: 30px 15px;
+  }
+
+  .services-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .services-grid {
+    gap: 16px;
+  }
+
+  .services-card {
+    padding: 20px;
+  }
+
+  .services-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 14px;
+    font-size: 26px;
+  }
+
+  .services-card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .services-card-description {
+    font-size: 13px;
+  }
+}

@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useSearchParams, Link } from "react-router-dom";
 import { authAPI } from "./services";
 import axios from "axios";
-import { useResponsive } from "./hooks/useResponsive";
+import "./ResetPasswordResponsive.css";
 
 const ResetPassword: React.FC = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const { isMobile } = useResponsive();
   
   const [token, setToken] = useState("");
   const [formData, setFormData] = useState({
@@ -88,7 +87,7 @@ const ResetPassword: React.FC = () => {
 
   if (success) {
     return (
-      <div style={{
+      <div className="reset-success-container" style={{
         backgroundColor: "#8E2017",
         minHeight: "100vh",
         display: "flex",
@@ -96,31 +95,34 @@ const ResetPassword: React.FC = () => {
         alignItems: "center",
         padding: "20px",
       }}>
-        <div style={{
+        <div className="reset-success-card" style={{
           backgroundColor: "#fff",
           borderRadius: "15px",
-          padding: isMobile ? "30px 20px" : "50px",
           maxWidth: "500px",
           width: "100%",
           textAlign: "center",
         }}>
-          <div style={{
+          <div className="reset-success-icon" style={{
             fontSize: "48px",
             color: "#4CAF50",
             marginBottom: "20px",
           }}>
             ✓
           </div>
-          <h2 style={{
+          <h2 className="reset-success-title" style={{
             color: "#4CAF50",
             marginBottom: "20px",
           }}>
             Password Reset Successful!
           </h2>
-          <p style={{ marginBottom: "20px" }}>
+          <p className="reset-success-text" style={{ 
+            marginBottom: "20px" 
+          }}>
             Your password has been successfully reset.
           </p>
-          <p style={{ color: "#666" }}>
+          <p className="reset-success-redirect" style={{ 
+            color: "#666" 
+          }}>
             Redirecting to login page...
           </p>
         </div>
@@ -138,10 +140,8 @@ const ResetPassword: React.FC = () => {
       boxSizing: "border-box",
       overflowX: "hidden",
     }}>
-      <div style={{
+      <div className="reset-nav" style={{
         color: "#fff",
-        padding: isMobile ? "15px 20px" : "20px 40px",
-        fontSize: isMobile ? "14px" : "16px",
       }}>
         <Link to="/Login" style={{
           color: "#fff",
@@ -154,25 +154,21 @@ const ResetPassword: React.FC = () => {
         </Link>
       </div>
 
-      <div style={{
+      <div className="reset-outer-container" style={{
         backgroundColor: "#8E2017",
         minHeight: "calc(100vh - 60px)",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         fontFamily: "'Poppins', sans-serif",
-        padding: isMobile ? "20px 15px" : "20px",
       }}>
-        <div style={{
+        <div className="reset-card" style={{
           backgroundColor: "#fff",
-          borderRadius: isMobile ? "10px" : "15px",
-          padding: isMobile ? "30px 20px" : "50px",
           width: "100%",
           maxWidth: "500px",
           boxSizing: "border-box",
         }}>
-          <h2 style={{
-            fontSize: isMobile ? "1.5rem" : "1.8rem",
+          <h2 className="reset-title" style={{
             fontWeight: 700,
             marginBottom: "10px",
             margin: "0 0 10px 0",
@@ -181,23 +177,20 @@ const ResetPassword: React.FC = () => {
             Reset Password
           </h2>
           
-          <p style={{
+          <p className="reset-subtitle" style={{
             textAlign: "center",
             color: "#666",
             marginBottom: "30px",
-            fontSize: isMobile ? "14px" : "15px",
           }}>
             Enter your new password below
           </p>
 
           {error && (
-            <div style={{
+            <div className="reset-error" style={{
               backgroundColor: "#ffebee",
               color: "#c62828",
-              padding: isMobile ? "10px" : "12px",
               borderRadius: "6px",
               marginBottom: "20px",
-              fontSize: isMobile ? "13px" : "14px",
               textAlign: "center",
               border: "1px solid #ef9a9a",
             }}>
@@ -206,18 +199,17 @@ const ResetPassword: React.FC = () => {
           )}
 
           <form
+            className="reset-form"
             style={{
               display: "flex",
               flexDirection: "column",
-              gap: isMobile ? "15px" : "20px",
             }}
             onSubmit={handleSubmit}
           >
             <div>
-              <label style={{
+              <label className="reset-label" style={{
                 display: "block",
                 marginBottom: "8px",
-                fontSize: isMobile ? "14px" : "15px",
                 fontWeight: "600",
               }}>
                 New Password
@@ -228,11 +220,10 @@ const ResetPassword: React.FC = () => {
                 placeholder="Enter new password"
                 value={formData.newPassword}
                 onChange={handleChange}
+                className="reset-input"
                 style={{
-                  padding: isMobile ? "10px 12px" : "12px 15px",
                   border: "1px solid #999",
                   borderRadius: "6px",
-                  fontSize: isMobile ? "14px" : "15px",
                   outline: "none",
                   width: "100%",
                   boxSizing: "border-box",
@@ -243,10 +234,9 @@ const ResetPassword: React.FC = () => {
             </div>
 
             <div>
-              <label style={{
+              <label className="reset-label" style={{
                 display: "block",
                 marginBottom: "8px",
-                fontSize: isMobile ? "14px" : "15px",
                 fontWeight: "600",
               }}>
                 Confirm Password
@@ -257,11 +247,10 @@ const ResetPassword: React.FC = () => {
                 placeholder="Confirm new password"
                 value={formData.confirmPassword}
                 onChange={handleChange}
+                className="reset-input"
                 style={{
-                  padding: isMobile ? "10px 12px" : "12px 15px",
                   border: "1px solid #999",
                   borderRadius: "6px",
-                  fontSize: isMobile ? "14px" : "15px",
                   outline: "none",
                   width: "100%",
                   boxSizing: "border-box",
@@ -273,14 +262,13 @@ const ResetPassword: React.FC = () => {
 
             <button
               type="submit"
+              className="reset-submit-btn"
               style={{
                 backgroundColor: "#8E2017",
                 color: "#fff",
                 border: "none",
                 borderRadius: "6px",
-                padding: isMobile ? "12px" : "14px",
                 cursor: loading ? "not-allowed" : "pointer",
-                fontSize: isMobile ? "15px" : "16px",
                 fontWeight: "600",
                 opacity: loading ? 0.6 : 1,
                 width: "100%",
@@ -293,8 +281,7 @@ const ResetPassword: React.FC = () => {
             </button>
           </form>
 
-          <p style={{
-            fontSize: isMobile ? "13px" : "14px",
+          <p className="reset-login-link" style={{
             textAlign: "center",
             marginTop: "20px",
             color: "#666",

@@ -1,0 +1,191 @@
+/* LoginResponsive.css - Responsive sizing for Login component */
+
+/* Default (Desktop) styles - 1024px and above */
+.login-nav {
+  padding: 20px 40px;
+  font-size: 16px;
+}
+
+.login-outer-container {
+  padding: 20px;
+}
+
+.login-card {
+  border-radius: 15px;
+  flex-direction: row;
+  max-width: 950px;
+  padding: 50px;
+  gap: 40px;
+}
+
+.login-left-section {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.login-heading {
+  font-size: 1.8rem;
+}
+
+.login-right-section {
+  flex: 1 1 40%;
+  min-width: 300px;
+}
+
+.login-form-title {
+  font-size: 1.5rem;
+}
+
+.login-error {
+  padding: 12px;
+  font-size: 14px;
+}
+
+.login-resend-btn {
+  padding: 8px 16px;
+  font-size: 13px;
+  width: auto;
+}
+
+.login-form {
+  gap: 15px;
+}
+
+.login-input {
+  padding: 12px 15px;
+  font-size: 15px;
+}
+
+.login-button {
+  padding: 12px;
+  font-size: 15px;
+}
+
+.login-signup-link,
+.login-forgot-link {
+  font-size: 14px;
+}
+
+/* Tablet styles - 768px to 1024px */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .login-outer-container {
+    padding: 30px 20px;
+  }
+
+  .login-card {
+    max-width: 700px;
+    padding: 40px 30px;
+  }
+
+  .login-heading {
+    font-size: 1.5rem;
+  }
+}
+
+/* Mobile styles - below 768px */
+@media (max-width: 767px) {
+  .login-nav {
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+
+  .login-outer-container {
+    padding: 20px 15px;
+  }
+
+  .login-card {
+    border-radius: 10px;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .login-left-section {
+    flex: none;
+    min-width: 100%;
+  }
+
+  .login-heading {
+    font-size: 1.3rem;
+  }
+
+  .login-right-section {
+    flex: none;
+    min-width: 100%;
+  }
+
+  .login-form-title {
+    font-size: 1.3rem;
+  }
+
+  .login-error {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .login-resend-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .login-form {
+    gap: 12px;
+  }
+
+  .login-input {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .login-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .login-signup-link,
+  .login-forgot-link {
+    font-size: 13px;
+  }
+}
+
+/* Extra small mobile - below 375px */
+@media (max-width: 374px) {
+  .login-nav {
+    padding: 12px 15px;
+    font-size: 13px;
+  }
+
+  .login-outer-container {
+    padding: 15px 10px;
+  }
+
+  .login-card {
+    padding: 25px 15px;
+    gap: 25px;
+  }
+
+  .login-heading {
+    font-size: 1.2rem;
+  }
+
+  .login-form-title {
+    font-size: 1.2rem;
+  }
+
+  .login-input {
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  .login-button {
+    padding: 9px;
+    font-size: 13px;
+  }
+
+  .login-resend-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}

@@ -3,11 +3,10 @@ import type { FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authAPI } from "./services";
 import axios from "axios";
-import { useResponsive } from "./hooks/useResponsive";
+import "./SignupResponsive.css";
 
 const Signup: React.FC = () => {
   const navigate = useNavigate();
-  const { isMobile, isTablet } = useResponsive();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -97,10 +96,8 @@ const Signup: React.FC = () => {
       boxSizing: "border-box",
       overflowX: "hidden",
     }}>
-      <div style={{
+      <div className="signup-nav" style={{
         color: "#fff",
-        padding: isMobile ? "15px 20px" : "20px 40px",
-        fontSize: isMobile ? "14px" : "16px",
       }}>
         <Link to="/home" style={{ 
           color: "#fff", 
@@ -120,29 +117,20 @@ const Signup: React.FC = () => {
         justifyContent: "center",
         alignItems: "center",
         fontFamily: "'Poppins', sans-serif",
-        padding: isMobile ? "20px 15px" : isTablet ? "30px 20px" : "20px",
-      }}>
-        <div style={{
+      }} className="signup-outer-container">
+        <div className="signup-card" style={{
           backgroundColor: "#fff",
-          borderRadius: isMobile ? "10px" : "15px",
           display: "flex",
-          flexDirection: isMobile ? "column" : "row",
           justifyContent: "space-between",
           width: "100%",
-          maxWidth: isMobile ? "100%" : isTablet ? "700px" : "950px",
-          padding: isMobile ? "30px 20px" : isTablet ? "40px 30px" : "50px",
           boxSizing: "border-box",
-          gap: isMobile ? "30px" : "40px",
         }}>
           {/* Left Section */}
-          <div style={{
-            flex: isMobile ? "none" : "1 1 45%",
+          <div className="signup-left-section" style={{
             display: "flex",
             alignItems: "center",
-            minWidth: isMobile ? "100%" : "300px",
           }}>
-            <h1 style={{
-              fontSize: isMobile ? "1.2rem" : isTablet ? "1.4rem" : "1.7rem",
+            <h1 className="signup-heading" style={{
               fontWeight: 700,
               color: "#000",
               lineHeight: "1.4",
@@ -154,28 +142,23 @@ const Signup: React.FC = () => {
           </div>
 
           {/* Right Section - Form */}
-          <div style={{
-            flex: isMobile ? "none" : "1 1 40%",
+          <div className="signup-right-section" style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            minWidth: isMobile ? "100%" : "300px",
           }}>
-            <h2 style={{
-              fontSize: isMobile ? "1.3rem" : "1.5rem",
+            <h2 className="signup-form-title" style={{
               fontWeight: 700,
               marginBottom: "20px",
               margin: "0 0 20px 0",
             }}>Create new account</h2>
 
             {error && (
-              <div style={{
+              <div className="signup-error" style={{
                 backgroundColor: "#ffebee",
                 color: "#c62828",
-                padding: isMobile ? "10px" : "12px",
                 borderRadius: "6px",
                 marginBottom: "15px",
-                fontSize: isMobile ? "13px" : "14px",
                 textAlign: "center",
                 border: "1px solid #ef9a9a",
               }}>
@@ -184,13 +167,11 @@ const Signup: React.FC = () => {
             )}
 
             {success && (
-              <div style={{
+              <div className="signup-success" style={{
                 backgroundColor: "#e8f5e9",
                 color: "#2e7d32",
-                padding: isMobile ? "10px" : "12px",
                 borderRadius: "6px",
                 marginBottom: "15px",
-                fontSize: isMobile ? "13px" : "14px",
                 textAlign: "center",
                 border: "1px solid #a5d6a7",
               }}>
@@ -199,10 +180,10 @@ const Signup: React.FC = () => {
             )}
 
             <form 
+              className="signup-form"
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: isMobile ? "12px" : "15px",
               }}
               onSubmit={handleSubmit}
             >
@@ -212,11 +193,10 @@ const Signup: React.FC = () => {
                 placeholder="First name"
                 value={formData.firstName}
                 onChange={handleChange}
+                className="signup-input"
                 style={{
-                  padding: isMobile ? "10px 12px" : "12px 15px",
                   border: "1px solid #999",
                   borderRadius: "6px",
-                  fontSize: isMobile ? "14px" : "15px",
                   outline: "none",
                   width: "100%",
                   boxSizing: "border-box",
@@ -229,11 +209,10 @@ const Signup: React.FC = () => {
                 placeholder="Last name"
                 value={formData.lastName}
                 onChange={handleChange}
+                className="signup-input"
                 style={{
-                  padding: isMobile ? "10px 12px" : "12px 15px",
                   border: "1px solid #999",
                   borderRadius: "6px",
-                  fontSize: isMobile ? "14px" : "15px",
                   outline: "none",
                   width: "100%",
                   boxSizing: "border-box",
@@ -246,11 +225,10 @@ const Signup: React.FC = () => {
                 placeholder="Your email"
                 value={formData.email}
                 onChange={handleChange}
+                className="signup-input"
                 style={{
-                  padding: isMobile ? "10px 12px" : "12px 15px",
                   border: "1px solid #999",
                   borderRadius: "6px",
-                  fontSize: isMobile ? "14px" : "15px",
                   outline: "none",
                   width: "100%",
                   boxSizing: "border-box",
@@ -263,11 +241,10 @@ const Signup: React.FC = () => {
                 placeholder="Password (min. 6 characters)"
                 value={formData.password}
                 onChange={handleChange}
+                className="signup-input"
                 style={{
-                  padding: isMobile ? "10px 12px" : "12px 15px",
                   border: "1px solid #999",
                   borderRadius: "6px",
-                  fontSize: isMobile ? "14px" : "15px",
                   outline: "none",
                   width: "100%",
                   boxSizing: "border-box",
@@ -277,14 +254,13 @@ const Signup: React.FC = () => {
               />
               <button
                 type="submit"
+                className="signup-button"
                 style={{
                   backgroundColor: "#8E2017",
                   color: "#fff",
                   border: "none",
                   borderRadius: "6px",
-                  padding: isMobile ? "10px" : "12px",
                   cursor: loading ? "not-allowed" : "pointer",
-                  fontSize: isMobile ? "14px" : "15px",
                   marginTop: "5px",
                   fontWeight: "600",
                   opacity: loading ? 0.6 : 1,
@@ -297,8 +273,7 @@ const Signup: React.FC = () => {
               </button>
             </form>
 
-            <p style={{
-              fontSize: isMobile ? "13px" : "14px",
+            <p className="signup-login-link" style={{
               textAlign: "center",
               marginTop: "15px",
               color: "#000",

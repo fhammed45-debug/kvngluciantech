@@ -1,0 +1,182 @@
+/* ContactResponsive.css - Responsive sizing for Contact component */
+
+/* Default (Desktop) styles - 1024px and above */
+.contact-nav {
+  flex-direction: row;
+  align-items: center;
+  padding: 15px 30px;
+  gap: 0;
+}
+
+.contact-back-link {
+  font-size: 20px;
+}
+
+.contact-nav-links {
+  flex-direction: row;
+  gap: 30px;
+  width: auto;
+}
+
+.contact-nav-links a {
+  font-size: 16px;
+}
+
+.contact-service-link {
+  font-size: 17px;
+}
+
+.contact-cards-container {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 50px;
+}
+
+.contact-card {
+  padding: 25px;
+  width: 300px;
+  max-width: none;
+  min-height: 400px;
+}
+
+.contact-card-title {
+  font-size: 1.5rem;
+}
+
+.contact-info-item {
+  padding: 15px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  margin: 11px 0;
+}
+
+.contact-icon {
+  width: 20px;
+}
+
+.contact-input {
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.contact-textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  rows: 6;
+  min-height: 120px;
+}
+
+.contact-submit-btn {
+  padding: 12px;
+  font-size: 16px;
+}
+
+/* Tablet styles - 768px to 1024px */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .contact-cards-container {
+    padding: 40px 30px;
+  }
+
+  .contact-card {
+    width: 280px;
+  }
+}
+
+/* Mobile styles - below 768px */
+@media (max-width: 767px) {
+  .contact-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  .contact-back-link {
+    font-size: 18px;
+  }
+
+  .contact-nav-links {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .contact-nav-links a {
+    font-size: 14px;
+  }
+
+  .contact-service-link {
+    font-size: 15px;
+  }
+
+  .contact-cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+
+  .contact-card {
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    min-height: auto;
+  }
+
+  .contact-card-title {
+    font-size: 1.3rem;
+  }
+
+  .contact-info-item {
+    padding: 12px;
+    font-size: 13px;
+    margin: 8px 0;
+  }
+
+  .contact-icon {
+    width: 18px;
+  }
+
+  .contact-input {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .contact-textarea {
+    padding: 8px 10px;
+    font-size: 13px;
+    rows: 5;
+    min-height: 100px;
+  }
+
+  .contact-submit-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Extra small mobile - below 375px */
+@media (max-width: 374px) {
+  .contact-nav {
+    padding: 12px 15px;
+  }
+
+  .contact-back-link {
+    font-size: 16px;
+  }
+
+  .contact-cards-container {
+    padding: 20px 15px;
+  }
+
+  .contact-card {
+    padding: 18px;
+  }
+
+  .contact-card-title {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,227 @@
+/* VerifyEmailResponsive.css - Responsive sizing for VerifyEmail component */
+
+/* Default (Desktop) styles - 1024px and above */
+.verify-nav {
+  padding: 20px 40px;
+  font-size: 16px;
+}
+
+.verify-outer-container {
+  padding: 20px;
+}
+
+.verify-card {
+  border-radius: 15px;
+  flex-direction: row;
+  max-width: 950px;
+  padding: 50px;
+  gap: 40px;
+}
+
+.verify-left-section {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.verify-heading {
+  font-size: 1.8rem;
+}
+
+.verify-description {
+  font-size: 1rem;
+}
+
+.verify-right-section {
+  flex: 1 1 40%;
+  min-width: 300px;
+}
+
+.verify-form-title {
+  font-size: 1.5rem;
+}
+
+.verify-error,
+.verify-success {
+  padding: 12px;
+  font-size: 14px;
+}
+
+.verify-form {
+  gap: 15px;
+}
+
+.verify-email-input {
+  padding: 12px 15px;
+  font-size: 15px;
+}
+
+.verify-code-input {
+  padding: 12px 15px;
+  font-size: 24px;
+  letter-spacing: 8px;
+}
+
+.verify-submit-btn {
+  padding: 12px;
+  font-size: 15px;
+}
+
+.verify-resend-text {
+  font-size: 14px;
+}
+
+.verify-resend-btn {
+  padding: 8px 20px;
+  font-size: 14px;
+}
+
+.verify-signup-link {
+  font-size: 14px;
+}
+
+/* Tablet styles - 768px to 1024px */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .verify-outer-container {
+    padding: 30px 20px;
+  }
+
+  .verify-card {
+    max-width: 700px;
+    padding: 40px 30px;
+  }
+
+  .verify-heading {
+    font-size: 1.5rem;
+  }
+}
+
+/* Mobile styles - below 768px */
+@media (max-width: 767px) {
+  .verify-nav {
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+
+  .verify-outer-container {
+    padding: 20px 15px;
+  }
+
+  .verify-card {
+    border-radius: 10px;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .verify-left-section {
+    flex: none;
+    min-width: 100%;
+  }
+
+  .verify-heading {
+    font-size: 1.3rem;
+  }
+
+  .verify-description {
+    font-size: 0.9rem;
+  }
+
+  .verify-right-section {
+    flex: none;
+    min-width: 100%;
+  }
+
+  .verify-form-title {
+    font-size: 1.3rem;
+  }
+
+  .verify-error,
+  .verify-success {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .verify-form {
+    gap: 12px;
+  }
+
+  .verify-email-input {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .verify-code-input {
+    padding: 10px 12px;
+    font-size: 20px;
+    letter-spacing: 4px;
+  }
+
+  .verify-submit-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .verify-resend-text {
+    font-size: 13px;
+  }
+
+  .verify-resend-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .verify-signup-link {
+    font-size: 13px;
+  }
+}
+
+/* Extra small mobile - below 375px */
+@media (max-width: 374px) {
+  .verify-nav {
+    padding: 12px 15px;
+    font-size: 13px;
+  }
+
+  .verify-outer-container {
+    padding: 15px 10px;
+  }
+
+  .verify-card {
+    padding: 25px 15px;
+    gap: 25px;
+  }
+
+  .verify-heading {
+    font-size: 1.2rem;
+  }
+
+  .verify-description {
+    font-size: 0.85rem;
+  }
+
+  .verify-form-title {
+    font-size: 1.2rem;
+  }
+
+  .verify-email-input {
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  .verify-code-input {
+    padding: 9px 10px;
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+
+  .verify-submit-btn {
+    padding: 9px;
+    font-size: 13px;
+  }
+
+  .verify-resend-btn {
+    padding: 7px 14px;
+    font-size: 12px;
+  }
+}

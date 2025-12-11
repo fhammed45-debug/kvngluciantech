@@ -2,11 +2,9 @@ import { Link } from "react-router-dom";
 import Mail from "./assets/Mail.png";
 import Group from "./assets/Group.png";
 import Vector from "./assets/Vector.png";
-import { useResponsive } from "./hooks/useResponsive";
+import "./ContactResponsive.css";
 
 function Contact() {
-  const { isMobile, isTablet } = useResponsive();
-
   return (
     <div style={{
       backgroundColor: "#8E2017",
@@ -16,97 +14,75 @@ function Contact() {
       width: "100%",
       boxSizing: "border-box",
     }}>
-      <nav style={{
+      <nav className="contact-nav" style={{
         display: "flex",
-        flexDirection: isMobile ? "column" : "row",
         justifyContent: "space-between",
         backgroundColor: "#8E2017",
-        alignItems: isMobile ? "flex-start" : "center",
-        padding: isMobile ? "15px 20px" : "15px 30px",
-        gap: isMobile ? "15px" : "0",
+        alignItems: "center",
       }}>
-        <Link to="/Home" style={{
+        <Link to="/Home" className="contact-back-link" style={{
           color: "white",
           textDecoration: "none",
-          fontSize: isMobile ? "18px" : "20px",
           fontWeight: "bold",
         }}>
             ← Back to Home
         </Link>
-        <div style={{
+        <div className="contact-nav-links" style={{
           display: "flex",
-          flexDirection: isMobile ? "column" : "row",
-          gap: isMobile ? "15px" : "30px",
-          width: isMobile ? "100%" : "auto",
         }}>
           <Link to="/" style={{
             color: "white",
             textDecoration: "none",
-            fontSize: isMobile ? "14px" : "16px",
           }}>
             
           </Link>
           <Link to="/" style={{
             color: "white",
             textDecoration: "none",
-            fontSize: isMobile ? "14px" : "16px",
           }}>
             
           </Link>
-          <Link to="/Service" style={{
+          <Link to="/Service" className="contact-service-link" style={{
             color: "white",
             textDecoration: "none",
-            fontSize: isMobile ? "15px" : "17px" ,
           }}>
             Services
           </Link>
         </div>
       </nav>
 
-      <div style={{
+      <div className="contact-cards-container" style={{
         display: "flex",
-        flexDirection: isMobile ? "column" : "row",
         justifyContent: "center",
-        alignItems: isMobile ? "center" : "flex-start",
-        gap: isMobile ? "30px" : "20px",
-        padding: isMobile ? "30px 20px" : isTablet ? "40px 30px" : "50px",
+        alignItems: "flex-start",
         flexWrap: "wrap",
       }}>
         {/* Contact Info Card */}
-        <div style={{
+        <div className="contact-card" style={{
           backgroundColor: "white",
-          padding: isMobile ? "20px" : "25px",
           borderRadius: "8px",
           boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-          width: isMobile ? "100%" : isTablet ? "280px" : "300px",
-          maxWidth: isMobile ? "400px" : "none",
-          minHeight: isMobile ? "auto" : "400px",
           boxSizing: "border-box",
         }}>
-          <h2 style={{
+          <h2 className="contact-card-title" style={{
             marginTop: "0",
-            fontSize: isMobile ? "1.3rem" : "1.5rem",
             color: "#000",
           }}>
             Contact us
           </h2>
 
-          <div style={{
+          <div className="contact-info-item" style={{
             background: "#f4f4f4",
-            padding: isMobile ? "12px" : "15px",
-            marginBottom: "15px",
             borderRadius: "5px",
-            fontSize: isMobile ? "13px" : "14px",
             display: "flex",
             alignItems: "center",
             gap: "10px",
-            margin: isMobile ? "8px 0" : "11px 0",
           }}>
             <img
               src={Mail}
               alt="mail box"
+              className="contact-icon"
               style={{
-                width: isMobile ? "18px" : "20px",
                 height: "auto",
               }}
             />
@@ -115,44 +91,36 @@ function Contact() {
             </span>
           </div>
 
-          <div style={{
+          <div className="contact-info-item" style={{
             background: "#f4f4f4",
-            padding: isMobile ? "12px" : "15px",
-            marginBottom: "15px",
             borderRadius: "5px",
-            fontSize: isMobile ? "13px" : "14px",
             display: "flex",
             alignItems: "center",
             gap: "10px",
-            margin: isMobile ? "8px 0" : "11px 0",
           }}>
             <img
               src={Group}
               alt="phone box"
+              className="contact-icon"
               style={{
-                width: isMobile ? "18px" : "20px",
                 height: "auto",
               }}
             />
             +234 901 780 2292
           </div>
 
-          <div style={{
+          <div className="contact-info-item" style={{
             background: "#f4f4f4",
-            padding: isMobile ? "12px" : "15px",
-            marginBottom: "15px",
             borderRadius: "5px",
-            fontSize: isMobile ? "13px" : "14px",
             display: "flex",
             alignItems: "center",
             gap: "10px",
-            margin: isMobile ? "8px 0" : "11px 0",
           }}>
             <img
               src={Vector}
               alt="location box"
+              className="contact-icon"
               style={{
-                width: isMobile ? "18px" : "20px",
                 height: "auto",
               }}
             />
@@ -161,26 +129,20 @@ function Contact() {
         </div>
 
         {/* Contact Form Card */}
-        <div style={{
+        <div className="contact-card" style={{
           backgroundColor: "white",
-          padding: isMobile ? "20px" : "25px",
           borderRadius: "8px",
           boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-          width: isMobile ? "100%" : isTablet ? "280px" : "300px",
-          maxWidth: isMobile ? "400px" : "none",
-          minHeight: isMobile ? "auto" : "400px",
           boxSizing: "border-box",
         }}>
           <input
             type="text"
             placeholder="Your name"
+            className="contact-input"
             style={{
               width: "100%",
-              padding: isMobile ? "8px 10px" : "10px",
-              marginBottom: "15px",
               border: "1px solid #ccc",
               borderRadius: "5px",
-              fontSize: isMobile ? "13px" : "14px",
               boxSizing: "border-box",
               outline: "none",
             }}
@@ -188,40 +150,33 @@ function Contact() {
           <input
             type="email"
             placeholder="Your email"
+            className="contact-input"
             style={{
               width: "100%",
-              padding: isMobile ? "8px 10px" : "10px",
-              marginBottom: "15px",
               border: "1px solid #ccc",
               borderRadius: "5px",
-              fontSize: isMobile ? "13px" : "14px",
               boxSizing: "border-box",
               outline: "none",
             }}
           />
           <textarea
             placeholder="Your message"
-            rows={isMobile ? 5 : 6}
+            className="contact-textarea"
             style={{
               width: "100%",
-              padding: isMobile ? "8px 10px" : "10px",
-              marginBottom: "15px",
               border: "1px solid #ccc",
               borderRadius: "5px",
-              fontSize: isMobile ? "13px" : "14px",
               boxSizing: "border-box",
               resize: "vertical",
               outline: "none",
               fontFamily: "inherit",
             }}
           />
-          <button style={{
+          <button className="contact-submit-btn" style={{
             width: "100%",
-            padding: isMobile ? "10px" : "12px",
             border: "none",
             backgroundColor: "#8E2017",
             color: "white",
-            fontSize: isMobile ? "14px" : "16px",
             borderRadius: "5px",
             cursor: "pointer",
             fontWeight: "600",

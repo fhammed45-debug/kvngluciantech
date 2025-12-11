@@ -3,10 +3,9 @@ import type { FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { authAPI } from "./services";
 import axios from "axios";
-import { useResponsive } from "./hooks/useResponsive";
+import "./ForgotPasswordResponsive.css";
 
 const ForgotPassword: React.FC = () => {
-  const { isMobile, isTablet } = useResponsive();
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -66,10 +65,8 @@ const ForgotPassword: React.FC = () => {
       boxSizing: "border-box",
       overflowX: "hidden",
     }}>
-      <div style={{
+      <div className="forgot-nav" style={{
         color: "#fff",
-        padding: isMobile ? "15px 20px" : "20px 40px",
-        fontSize: isMobile ? "14px" : "16px",
       }}>
         <Link to="/home" style={{
           color: "#fff",
@@ -82,37 +79,28 @@ const ForgotPassword: React.FC = () => {
         </Link>
       </div>
 
-      <div style={{
+      <div className="forgot-outer-container" style={{
         backgroundColor: "#8E2017",
         minHeight: "calc(100vh - 60px)",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         fontFamily: "'Poppins', sans-serif",
-        padding: isMobile ? "20px 15px" : isTablet ? "30px 20px" : "20px",
       }}>
-        <div style={{
+        <div className="forgot-card" style={{
           backgroundColor: "#fff",
-          borderRadius: isMobile ? "10px" : "15px",
           display: "flex",
-          flexDirection: isMobile ? "column" : "row",
           justifyContent: "space-between",
           width: "100%",
-          maxWidth: isMobile ? "100%" : isTablet ? "700px" : "950px",
-          padding: isMobile ? "30px 20px" : isTablet ? "40px 30px" : "50px",
           boxSizing: "border-box",
-          gap: isMobile ? "30px" : "40px",
         }}>
           {/* Left Section */}
-          <div style={{
-            flex: isMobile ? "none" : "1 1 45%",
+          <div className="forgot-left-section" style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
-            minWidth: isMobile ? "100%" : "300px",
           }}>
-            <h1 style={{
-              fontSize: isMobile ? "1.3rem" : isTablet ? "1.5rem" : "1.8rem",
+            <h1 className="forgot-heading" style={{
               fontWeight: 700,
               color: "#000",
               lineHeight: "1.4",
@@ -121,8 +109,7 @@ const ForgotPassword: React.FC = () => {
             }}>
               Reset your password
             </h1>
-            <p style={{
-              fontSize: isMobile ? "0.9rem" : "1rem",
+            <p className="forgot-description" style={{
               color: "#666",
               lineHeight: "1.5",
               margin: 0,
@@ -132,15 +119,12 @@ const ForgotPassword: React.FC = () => {
           </div>
 
           {/* Right Section - Form */}
-          <div style={{
-            flex: isMobile ? "none" : "1 1 40%",
+          <div className="forgot-right-section" style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            minWidth: isMobile ? "100%" : "300px",
           }}>
-            <h2 style={{
-              fontSize: isMobile ? "1.3rem" : "1.5rem",
+            <h2 className="forgot-form-title" style={{
               fontWeight: 700,
               marginBottom: "20px",
               margin: "0 0 20px 0",
@@ -149,13 +133,11 @@ const ForgotPassword: React.FC = () => {
             </h2>
 
             {error && (
-              <div style={{
+              <div className="forgot-error" style={{
                 backgroundColor: "#ffebee",
                 color: "#c62828",
-                padding: isMobile ? "10px" : "12px",
                 borderRadius: "6px",
                 marginBottom: "15px",
-                fontSize: isMobile ? "13px" : "14px",
                 textAlign: "center",
                 border: "1px solid #ef9a9a",
               }}>
@@ -164,13 +146,11 @@ const ForgotPassword: React.FC = () => {
             )}
 
             {success && (
-              <div style={{
+              <div className="forgot-success" style={{
                 backgroundColor: "#e8f5e9",
                 color: "#2e7d32",
-                padding: isMobile ? "10px" : "12px",
                 borderRadius: "6px",
                 marginBottom: "15px",
-                fontSize: isMobile ? "13px" : "14px",
                 textAlign: "center",
                 border: "1px solid #a5d6a7",
               }}>
@@ -179,10 +159,10 @@ const ForgotPassword: React.FC = () => {
             )}
 
             <form
+              className="forgot-form"
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: isMobile ? "12px" : "15px",
               }}
               onSubmit={handleSubmit}
             >
@@ -196,11 +176,10 @@ const ForgotPassword: React.FC = () => {
                   setError("");
                   setSuccess("");
                 }}
+                className="forgot-input"
                 style={{
-                  padding: isMobile ? "10px 12px" : "12px 15px",
                   border: "1px solid #999",
                   borderRadius: "6px",
-                  fontSize: isMobile ? "14px" : "15px",
                   outline: "none",
                   width: "100%",
                   boxSizing: "border-box",
@@ -209,14 +188,13 @@ const ForgotPassword: React.FC = () => {
               />
               <button
                 type="submit"
+                className="forgot-submit-btn"
                 style={{
                   backgroundColor: "#8E2017",
                   color: "#fff",
                   border: "none",
                   borderRadius: "6px",
-                  padding: isMobile ? "10px" : "12px",
                   cursor: loading ? "not-allowed" : "pointer",
-                  fontSize: isMobile ? "14px" : "15px",
                   marginTop: "5px",
                   fontWeight: "600",
                   opacity: loading ? 0.6 : 1,
@@ -229,11 +207,10 @@ const ForgotPassword: React.FC = () => {
               </button>
             </form>
 
-            <div style={{
+            <div className="forgot-links-section" style={{
               marginTop: "20px",
             }}>
-              <p style={{
-                fontSize: isMobile ? "13px" : "14px",
+              <p className="forgot-login-link" style={{
                 textAlign: "center",
                 marginTop: "10px",
                 color: "#000",
@@ -248,8 +225,7 @@ const ForgotPassword: React.FC = () => {
                   Login
                 </Link>
               </p>
-              <p style={{
-                fontSize: isMobile ? "13px" : "14px",
+              <p className="forgot-signup-link" style={{
                 textAlign: "center",
                 marginTop: "10px",
                 color: "#000",
